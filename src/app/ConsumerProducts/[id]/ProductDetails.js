@@ -3,8 +3,7 @@ import { useState } from "react";
 import { ShoppingCart, Bolt } from "lucide-react";
 
 export default function ProductDetails({ product }) {
-  const { name, price, originalPrice, discount, images, rating, reviews } =
-    product;
+  const { name, price, originalPrice, discount, images, rating, reviews } = product;
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
@@ -59,10 +58,11 @@ export default function ProductDetails({ product }) {
         {/* Action Buttons */}
         <div className="mt-6 flex gap-4">
           <button className="bg-orange-500 text-white px-6 py-3 w-1/2 rounded-lg text-lg font-semibold shadow-md">
-          <ShoppingCart size={20} />ADD TO CART
+            <ShoppingCart size={20} />
+            ADD TO CART
           </button>
           <button className="bg-orange-600 text-white px-6 py-3 w-1/2 rounded-lg text-lg font-semibold shadow-md">
-          <Bolt size={20} /> BUY NOW
+            <Bolt size={20} /> BUY NOW
           </button>
         </div>
       </div>

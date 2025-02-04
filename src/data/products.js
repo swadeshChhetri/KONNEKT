@@ -1,0 +1,58 @@
+export const products = [
+  {
+    id: "1",
+    name: "Shoetopia Women Heels Sandal",
+    price: "₹529",
+    originalPrice: "₹1,999",
+    discount: "73% off",
+    rating: "4.2★",
+    reviews: "6,909 ratings",
+    images: [
+      "/images/shoetopia-main.jpg",
+      "/images/shoetopia-side.jpg",
+      "/images/shoetopia-bottom.jpg",
+    ],
+  },
+  {
+    id: "2",
+    name: "Women Heels Sandal",
+    price: "₹529",
+    originalPrice: "₹1,999",
+    discount: "73% off",
+    rating: "4.2★",
+    reviews: "6,909 ratings",
+    images: [
+      "/images/shoetopia-main.jpg",
+      "/images/shoetopia-side.jpg",
+      "/images/shoetopia-bottom.jpg",
+    ],
+  },
+  {
+    id: "3",
+    name: "Heels Sandal",
+    price: "₹529",
+    originalPrice: "₹1,999",
+    discount: "73% off",
+    rating: "4.2★",
+    reviews: "6,909 ratings",
+    images: [
+      "/images/shoetopia-main.jpg",
+      "/images/shoetopia-side.jpg",
+      "/images/shoetopia-bottom.jpg",
+    ],
+  },
+  {
+    id: "4",
+    name: "Sandal",
+    price: "₹529",
+    originalPrice: "₹1,999",
+    discount: "73% off",
+    rating: "4.2★",
+    reviews: "6,909 ratings",
+    images: [
+      "/images/shoetopia-main.jpg",
+      "/images/shoetopia-side.jpg",
+      "/images/shoetopia-bottom.jpg",
+    ],
+  },
+];

@@ -34,40 +34,40 @@ import Slider from "@/components/Slider";
 
 function HomePage() {
   const categories = [
-    { icon: User, label: "Business Services" },
-    { icon: Shirt, label: "Apparel & Accessories" },
-    { icon: Home, label: "Home & Garden" },
-    { icon: FlaskConical, label: "Beauty" },
-    { icon: Package, label: "Packaging & Printing" },
-    { icon: Gem, label: "Jewelry, Eyewear,..." },
-    { icon: ShoppingBag, label: "Shoes & Accessories" },
-    { icon: Leaf, label: "Environment" },
-    { icon: Headphones, label: "Consumer Electronics" },
-    { icon: Dumbbell, label: "Sports & Entertainment" },
-    { icon: Briefcase, label: "Commercial Equipment &..." },
-    { icon: Baby, label: "Mother, Kids & Toys" },
-    { icon: Car, label: "Vehicle Parts & Accessories" },
-    { icon: Box, label: "Furniture" },
-    { icon: Car, label: "Vehicle Parts & Accessories" },
-    { icon: Box, label: "Furniture" },
+    { icon: User, label: "" },
+    { icon: Shirt, label: "" },
+    { icon: Home, label: "" },
+    { icon: FlaskConical, label: "" },
+    { icon: Package, label: "" },
+    { icon: Gem, label: "" },
+    { icon: ShoppingBag, label: "" },
+    { icon: Leaf, label: "" },
+    { icon: Headphones, label: "" },
+    { icon: Dumbbell, label: "" },
+    { icon: Briefcase, label: "" },
+    { icon: Baby, label: "" },
+    { icon: Car, label: "" },
+    { icon: Box, label: "" },
+    { icon: Car, label: "" },
+    { icon: Box, label: "" },
   ];
 
   const cards1 = [
     {
       img: "/factory.jpg", // Replace with actual image paths
-      title: "Connect with top-ranking manufacturers",
+      title: "Connect with Top-Ranking Manufacturers",
       link: "#",
       linkText: "View more",
     },
     {
       img: "/samples.jpg",
-      title: "Get samples",
+      title: "Request Samples with Ease",
       link: "#",
       linkText: "View more",
     },
     {
       img: "/live-tour.jpg",
-      title: "Take factory live tours",
+      title: "Experience Live Factory Tours",
       link: "#",
       linkText: "View LIVE",
     },
@@ -76,27 +76,27 @@ function HomePage() {
   const features = [
     {
       icon: <Grid size={40} className="text-white" />,
-      title: "Millions of business offerings",
+      title: "Explore Millions of Business Offerings",
       description:
-        "Explore products and suppliers for your business from millions of offerings worldwide.",
+        "Discover a vast selection of products and suppliers from around the world, tailored to your business needs.",
     },
     {
       icon: <ShieldCheck size={40} className="text-white" />,
-      title: "Assured quality and transactions",
+      title: "Assured Quality & Secure Transactions",
       description:
-        "Ensure production quality from verified suppliers, with your orders protected from payment to delivery.",
+        "Source confidently from verified suppliers with guaranteed production quality and end-to-end order protection—from payment to delivery.",
     },
     {
       icon: <Repeat size={40} className="text-white" />,
-      title: "One-stop trading solution",
+      title: "Your All-in-One Trading Solution",
       description:
-        "Order seamlessly from product/supplier search to order management, payment, and fulfillment.",
+        "Seamlessly manage everything from product discovery to order placement, payment, and fulfillment—all in one platform.",
     },
     {
       icon: <Layers size={40} className="text-white" />,
-      title: "Tailored trading experience",
+      title: "A Trading Experience Tailored for You",
       description:
-        "Get curated benefits, such as exclusive discounts, enhanced protection, and extra support to help grow your business every step of the way.",
+        "Enjoy exclusive perks, including special discounts, enhanced security, and dedicated support to help scale your business effortlessly.",
     },
   ];
 
@@ -118,26 +118,26 @@ function HomePage() {
   const steps = [
     {
       icon: <Search className="w-8 h-8 text-orange-500" />,
-      title: "Search for matches",
+      title: "Find the Perfect Match",
       description:
         "Search and filter from millions of product and supplier offerings to find the matching ones for your business.",
       highlighted: true,
     },
     {
       icon: <CheckCircle className="w-6 h-6 text-gray-600" />,
-      title: "Identify the right one",
+      title: "Choose with Confidence",
     },
     {
       icon: <DollarSign className="w-6 h-6 text-gray-600" />,
-      title: "Pay with confidence",
+      title: "Secure & Seamless Payments",
     },
     {
       icon: <Globe className="w-6 h-6 text-gray-600" />,
-      title: "Fulfill with transparency",
+      title: "Transparent Fulfillment",
     },
     {
       icon: <UserCheck className="w-6 h-6 text-gray-600" />,
-      title: "Manage with ease",
+      title: "Effortless Management",
     },
   ];
 
@@ -203,13 +203,13 @@ function HomePage() {
         </div>
       </section>
 
-      <div className="bg-[#3b1f1b] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
+      <div className="bg-[#ebe5e4] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-8">
         {features.map((feature, index) => (
           <div
             key={index}
-            className="flex flex-col items-start bg-[#592d24] text-white p-6 rounded-2xl shadow-md"
+            className="flex flex-col items-start bg-[#271f1e] text-white p-6 rounded-2xl shadow-md"
           >
-            <div className="bg-[#41221e] p-4 rounded-full mb-4">
+            <div className="p-4 rounded-full mb-4">
               {feature.icon}
             </div>
             <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
@@ -376,7 +376,7 @@ function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold">New this week</h3>
                   <p className="text-gray-500">
-                    Products from Verified Suppliers only
+                  Exclusive Products from Verified Suppliers
                   </p>
                 </div>
               </div>
@@ -415,7 +415,7 @@ function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold">New this week</h3>
                   <p className="text-gray-500">
-                    Products from Verified Suppliers only
+                  Exclusive Products from Verified Suppliers
                   </p>
                 </div>
               </div>
@@ -516,45 +516,41 @@ function HomePage() {
       </section>
 
       <section>
-        <div className="bg-[#4A2C21] text-white py-12 px-6 lg:px-20">
+        <div className="bg-[#ebe5e4] text-black py-12 px-6 lg:px-20">
           {/* Title and Description */}
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-3xl font-bold">
-              Trade with confidence from production quality to purchase
-              protection
+            Trade with confidence—ensuring top-notch production quality and secure purchase protection
             </h2>
           </div>
 
           {/* Two Cards Section */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {/* First Card */}
-            <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-              <h3 className="text-lg text-white mb-2">
-                Ensure production quality with
+            <div className="bg-white bg-opacity-10 p-6 rounded-lg border border-black">
+              <h3 className="text-lg text-black mb-2">
+              Ensure Production Quality with
               </h3>
               <h2 className="text-2xl font-bold flex items-center">
                 <span className="text-blue-500">Verified</span> Supplier
               </h2>
-              <p className="text-gray-300 mt-3">
-                Connect with a variety of suppliers with third-party-verified
-                credentials and capabilities. Look for the "Verified" logo to
-                begin sourcing with experienced suppliers your business could
-                rely on.
+              <p className="text-black-300 mt-3">
+              Connect with a network of trusted suppliers, each with third-party-verified credentials and capabilities. Look for the "Verified" badge to source confidently from experienced suppliers your business can rely on.
               </p>
               <div className="mt-5 flex items-center gap-4">
                 <button className="bg-white text-black px-4 py-2 rounded-full flex items-center">
                   ⏺ Watch video
                 </button>
-                <a href="#" className="text-white underline">
+                <a href="#" className="text-black underline">
                   Learn more
                 </a>
               </div>
             </div>
 
             {/* Second Card */}
-            <div className="bg-white bg-opacity-10 p-6 rounded-lg">
-              <h3 className="text-lg text-white mb-2">
-                Protect your purchase with
+            <div className="bg-white bg-opacity-10 p-6 rounded-lg border border-black">
+              <h3 className="text-lg text-black mb-2">
+              Secure Your Purchase with
               </h3>
               <h2 className="text-2xl font-bold flex items-center">
                 <span className="bg-yellow-500 text-black px-2 py-1 rounded mr-2">
@@ -562,7 +558,7 @@ function HomePage() {
                 </span>
                 Trade Assurance
               </h2>
-              <p className="text-gray-300 mt-3">
+              <p className="text-black-300 mt-3">
                 Source confidently with access to secure payment options,
                 protection against product or shipping issues, and mediation
                 support for any purchase-related concerns when you order and pay
@@ -572,7 +568,7 @@ function HomePage() {
                 <button className="bg-white text-black px-4 py-2 rounded-full flex items-center">
                   ⏺ Watch video
                 </button>
-                <a href="#" className="text-white underline">
+                <a href="#" className="text-black underline">
                   Learn more
                 </a>
               </div>

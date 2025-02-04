@@ -1,11 +1,15 @@
 import Image from 'next/image';
+import Link from "next/link";
 
 const ProductCard = ({ product }) => {
+
+  const imageUrl = product.image || "https://via.placeholder.com/300";
+
   return (
-    <div className="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
+    <Link href={`/ConsumerProducts/${product.id}`} className="bg-white rounded-2xl shadow-md p-4 hover:shadow-lg transition-shadow duration-300">
       <div className="relative w-full h-64 overflow-hidden rounded-xl">
         <Image 
-          src={product.image} 
+          src={imageUrl}
           alt={product.name} 
           width={300}
           height={300}
@@ -25,7 +29,7 @@ const ProductCard = ({ product }) => {
           <p className="text-sm text-red-500 font-semibold">{product.discount}</p>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
 
