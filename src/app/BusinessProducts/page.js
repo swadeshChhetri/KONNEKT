@@ -137,7 +137,7 @@ export default  function ProductsPageWrapper() {
     }
   return(
     <div>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-14 ">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-24 ">
         <section className="bg-gray-200  text-center">
           <div>
             {/* Sidebar */}
@@ -159,7 +159,7 @@ export default  function ProductsPageWrapper() {
 
             {/* Hover Content Panel */}
             {hoveredCategory && (
-              <div className="absolute left-64 top-0 h-screen w-72 bg-gray-50 shadow-lg p-4">
+              <div className="absolute left-64 top-0 w-72 bg-gray-50 shadow-lg pl-4 z-10 mt-24 h-2/3">
                 <h3 className="text-lg font-semibold">{hoveredCategory}</h3>
                 <p className="text-sm text-gray-600">
                   {
