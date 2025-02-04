@@ -11,8 +11,11 @@ export default {
         lg: '41rem', // Add your custom max-width value
       },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#E63946", // Red
+        dark: "#0D0D0D", // Deep Black
+        light: "#F5F5F5", // Soft White
+        grayDark: "#1E1E1E", // Optional Dark Gray
+        grayLight: "#E0E0E0", // Op
       },
     },
   },

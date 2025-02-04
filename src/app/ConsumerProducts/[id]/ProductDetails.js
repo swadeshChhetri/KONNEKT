@@ -7,7 +7,7 @@ export default function ProductDetails({ product }) {
   const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
-    <div className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8">
+    <div className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 p-16">
       {/* Left Side - Product Images */}
       <div>
         <img

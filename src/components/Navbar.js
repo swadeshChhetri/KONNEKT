@@ -17,11 +17,11 @@ export default function Header() {
   const [locationOpen, setLocationOpen] = useState(false);
 
   return (
-    <header className="bg-blue-600 w-full text-white fixed shadow-md z-50">
-      <nav className="flex items-center justify-between bg-white px-6 py-3 border-b shadow-sm">
+    <header className="bg-blue-600 w-full text-light fixed shadow-md z-50">
+      <nav className="flex items-center justify-between bg-dark text-light px-6 py-3 border-b shadow-sm">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <h4 className="font-semibold text-black">KONNEKT.com</h4>
+          <h4 className="font-semibold text-light">KONNEKT.com</h4>
         </div>
 
         {/* Show extra content only on Trade page */}
@@ -29,7 +29,7 @@ export default function Header() {
           <div className="relative">
             <button
               onClick={() => setLocationOpen(!locationOpen)}
-              className="flex items-center space-x-1 text-gray-600"
+              className="flex items-center space-x-1 text-gray-600 hover:bg-red-700"
             >
               <MapPin className="w-5 h-5" />
               <span>All Cities</span>
@@ -56,7 +56,7 @@ export default function Header() {
         {/* Search Bar */}
         <div className="flex items-center border rounded-full px-4 py-2 w-1/2">
           {!isTradePage && (
-          <select className="text-sm text-gray-600 bg-transparent focus:outline-none">
+          <select className="text-sm text-light bg-dark focus:outline-none">
             <option>Products</option>
             <option>Suppliers</option>
             <option>Categories</option>
@@ -65,10 +65,10 @@ export default function Header() {
           <input
             type="text"
             placeholder="tactical vest"
-            className="flex-grow px-2 text-sm focus:outline-none"
+            className="flex-grow px-2 text-sm focus:outline-none text-light bg-dark"
           />
-          <button className="ml-2">
-            <Search className="text-gray-600" size={20} />
+          <button className="ml-2 hover:bg-red-700 rounded-md">
+            <Search className="" size={20} />
           </button>
         </div>
 
@@ -77,21 +77,21 @@ export default function Header() {
           {!isTradePage && (
             <>
               <div className="flex items-center space-x-1 text-sm mr-4">
-                <Globe size={20} className="text-gray-600" />
-                <span className="text-gray-600">Deliver to:</span>
-                <span className="font-semibold text-gray-900">US</span>
+                <Globe size={20} className="" />
+                <span className="">Deliver to:</span>
+                <span className="font-semibold ">US</span>
               </div>
 
-              <ShoppingCart size={20} className="text-gray-600" />
+              <ShoppingCart size={20} className="" />
             </>
           )}
 
           {/* Sign Up Button */}
-          <button className="text-black font-semibold flex">
-            <User size={20} className="text-gray-600" />
+          <button className="font-semibold flex  hover:bg-red-700 rounded-xl p-1">
+            <User size={20} className="" />
             Sign Up
           </button>
-          <button className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-orange-600">
+          <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700">
             Sign In
           </button>
 
