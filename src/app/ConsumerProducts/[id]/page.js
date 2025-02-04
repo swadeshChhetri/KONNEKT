@@ -80,6 +80,7 @@
 // }
 
 import { products } from "@/data/products";
+import { ShoppingCart, Bolt } from "lucide-react";
 
 
 export default async function ProductDetails({params}) {
@@ -97,7 +98,7 @@ export default async function ProductDetails({params}) {
     //   <p className="text-gray-700 mb-4">{product.description}</p>
     //   <p className="text-xl font-semibold">${product.price}</p>
     // </div>
-    <div className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 p-16">
+    <div  className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 pt-32">
     {/* Left Side - Product Images */}
     <div>
       {/* <img

@@ -105,13 +105,13 @@ function HomePage() {
       img: "/b2b.jpg", // Replace with actual image paths
       title: "Business-to-Business",
       link: "/BusinessProducts",
-      linkText: "View more",
+      linkText: "Register To B2B",
     },
     {
       img: "/b2c.jpg",
       title: "Business-to-Consumer",
       link: "/ConsumerProducts",
-      linkText: "View more",
+      linkText: "Register To B2C",
     },
   ];
 
@@ -194,7 +194,14 @@ function HomePage() {
                 <h3 className="text-white text-lg font-semibold">
                   {card.title}
                 </h3>
-                <a href={card.link} className="text-white underline text-sm">
+                <a href={card.link} className="text-white text-sm rounded-[5rem] w-[150px] p-2 bg-primary text-center">
+           {/*      margin: 7rem 4%;
+    
+     */}
+
+
+
+
                   {card.linkText}
                 </a>
               </div>
@@ -209,7 +216,7 @@ function HomePage() {
             key={index}
             className="flex flex-col items-start bg-[#271f1e] text-white p-6 rounded-2xl shadow-md"
           >
-            <div className="p-4 rounded-full mb-4">
+            <div className="p-4 rounded-full mb-4 bg-primary">
               {feature.icon}
             </div>
             <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
@@ -220,32 +227,31 @@ function HomePage() {
 
       <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-10">
 
-      <div className="grid grid-cols-2 gap-6 mt-6 md:mt-0 text-gray-900">
-          <div className="border-r-2 pl-4">
-            <p className="text-5xl font-bold text-orange-500">200M+</p>
-            <p className="text-sm text-gray-700">products</p>
-          </div>
-          <div className="border-r-2 pl-4">
-            <p className="text-5xl font-bold text-orange-500">200K+</p>
-            <p className="text-sm text-gray-700">suppliers</p>
-          </div>
-          <div className="border-r-2 pl-4">
-            <p className="text-5xl font-bold text-orange-500">5,900</p>
-            <p className="text-sm text-gray-700">product categories</p>
-          </div>
-          <div className="border-r-2 pl-4">
-            <p className="text-5xl font-bold text-orange-500">200+</p>
-            <p className="text-sm text-gray-700">countries and regions</p>
-          </div>
-        </div>
-
-
-        <div className="max-w-lg">
+      <div className="max-w-lg">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Discover millions of products and services, perfectly matched to
             help your business thrive and grow.
           </h2>
         </div>
+
+      <div className="grid grid-cols-2 gap-6 mt-6 md:mt-0 text-gray-900">
+          <div className="border-r-2 pl-4">
+            <p className="text-5xl font-bold text-orange-500">200M+</p>
+            <p className="text-2xl text-gray-700">products</p>
+          </div>
+          <div className="border-r-2 pl-4">
+            <p className="text-5xl font-bold text-orange-500">200K+</p>
+            <p className="text-2xl text-gray-700">suppliers</p>
+          </div>
+          <div className="border-r-2 pl-4">
+            <p className="text-5xl font-bold text-orange-500">5,900</p>
+            <p className="text-2xl text-gray-700">product categories</p>
+          </div>
+          <div className="border-r-2 pl-4">
+            <p className="text-5xl font-bold text-orange-500">200+</p>
+            <p className="text-2xl text-gray-700">countries and regions</p>
+          </div>
+      </div>
 
       </section>
 
