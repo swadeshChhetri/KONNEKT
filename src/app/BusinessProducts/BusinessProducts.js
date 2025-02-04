@@ -91,7 +91,7 @@ const homeCategories = [
 ];
 
 export default function BusinessProducts({ products }) {
-  console.log(products);
+  
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [index, setIndex] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
@@ -106,6 +106,12 @@ export default function BusinessProducts({ products }) {
     {
       img: "/b2c.jpg",
       title: "Business-to-Consumer",
+      link: "#",
+      linkText: "View more",
+    },
+    {
+      img: "/b2c.jpg",
+      title: "Add your Content",
       link: "#",
       linkText: "View more",
     },
@@ -183,7 +189,7 @@ export default function BusinessProducts({ products }) {
                   alt={card.title}
                   width={500}
                   height={300}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-32 object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex flex-col justify-between p-4">
                   <h3 className="text-white text-lg font-semibold">

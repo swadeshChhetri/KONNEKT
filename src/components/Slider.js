@@ -1,14 +1,14 @@
 "use client"; // Required for client-side interactivity
 
-import Image from "next/image";  
+import Image from "next/image";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { useRef } from "react";
-import "swiper/css"; 
-import "swiper/css/navigation"; 
-import "swiper/css/pagination"; 
-import "swiper/css/autoplay"; 
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
 
 export default function Slider() {
   const swiperRef = useRef(null);
@@ -43,29 +43,39 @@ export default function Slider() {
       >
         <SwiperSlide>
           <div className="h-full bg-gray-100 p-24 text-center">
-          <Image
-      src="/b2b.jpg"  // Replace with your actual image path
-      alt="Slide 2 Image"
-      width={500}
-      height={300}
-      className="w-full h-full object-cover"  // Ensures full coverage
-    />
+            <Image
+              src="/B2B/slide3.webp" // Replace with your actual image path
+              alt="Slide 2 Image"
+              width={500}
+              height={300}
+              className="w-full h-full object-cover" // Ensures full coverage
+            />
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-full bg-gray-200 p-24 text-center">Slide 2</div>
+          <div className="h-full bg-gray-200 p-24 text-center">
+            <Image
+              src="/B2B/slide1.webp"
+              alt="Slide 1"
+              width={600}
+              height={400}
+            />
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="h-full bg-gray-300 p-24 text-center">Slide 3</div>
+          <div className="h-full bg-gray-300 p-24 text-center">
+            <Image
+              src="/B2B/slide2.jpeg"
+              alt="Slide 1"
+              width={600}
+              height={400}
+            />
+          </div>
         </SwiperSlide>
 
         {/* Navigation Buttons */}
-        <div
-          className="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        ></div>
-        <div
-          className="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        ></div>
+        <div className="swiper-button-next opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="swiper-button-prev opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
         {/* Pagination Dots */}
         <div className="swiper-pagination !bottom-0"></div>

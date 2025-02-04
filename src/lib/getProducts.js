@@ -41,7 +41,7 @@ export async function getProducts() {
     "1": {
       id: "1",
       name: "Shoetopia Women Heels Sandal",
-      Image : "",
+      Image : "/public/B2B/1.jpg",
       price: "₹529",
       originalPrice: "₹1,999",
       discount: "73% off",

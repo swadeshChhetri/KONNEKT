@@ -101,11 +101,11 @@ export default async function ProductDetails({params}) {
     <div  className="container mx-auto px-4 py-8 grid md:grid-cols-2 gap-8 pt-32">
     {/* Left Side - Product Images */}
     <div>
-      {/* <img
-        src={selectedImage}
-        alt={name}
+      <img
+        src={product.image}
+        
         className="w-full h-auto rounded-lg shadow-lg"
-      /> */}
+      />
       {/* <div className="flex gap-2 mt-4">
         {images.map((img, index) => (
           <img

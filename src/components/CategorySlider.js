@@ -15,7 +15,7 @@ export default function CategorySlider({ categories }) {
     <>
       <div className="relative overflow-hidden">
         <motion.div
-          className="flex gap-4"
+          className="flex gap-4 w-fit"
           animate={{ x: `-${index * 220}px` }} // Move one item at a time
           transition={{ type: "tween", duration: 0.5 }} // Smooth transition
         >
