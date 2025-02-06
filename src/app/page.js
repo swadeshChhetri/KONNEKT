@@ -30,7 +30,7 @@ import {
 import { Grid, ShieldCheck, Repeat, Layers } from "lucide-react";
 
 import { ChevronDown, ShoppingCart } from "lucide-react";
-import Slider from "@/components/Slider";
+import ResponsiveSlider from "@/components/Slider";
 
 function HomePage() {
   const categories = [
@@ -194,13 +194,13 @@ function HomePage() {
                 <h3 className="text-white text-lg font-semibold">
                   {card.title}
                 </h3>
-                <a href={card.link} className="text-white text-sm rounded-[5rem] w-[150px] p-2 bg-primary text-center">
-           {/*      margin: 7rem 4%;
+                <a
+                  href={card.link}
+                  className="text-white text-sm rounded-[5rem] w-[150px] p-2 bg-primary text-center"
+                >
+                  {/*      margin: 7rem 4%;
     
      */}
-
-
-
 
                   {card.linkText}
                 </a>
@@ -226,15 +226,14 @@ function HomePage() {
       </div>
 
       <section className="flex flex-col md:flex-row items-center justify-between px-6 md:px-12 py-10">
-
-      <div className="max-w-lg">
+        <div className="max-w-lg">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Discover millions of products and services, perfectly matched to
             help your business thrive and grow.
           </h2>
         </div>
 
-      <div className="grid grid-cols-2 gap-6 mt-6 md:mt-0 text-gray-900">
+        <div className="grid grid-cols-2 gap-6 mt-6 md:mt-0 text-gray-900">
           <div className="border-r-2 pl-4">
             <p className="text-5xl font-bold text-orange-500">200M+</p>
             <p className="text-2xl text-gray-700">products</p>
@@ -251,8 +250,7 @@ function HomePage() {
             <p className="text-5xl font-bold text-orange-500">200+</p>
             <p className="text-2xl text-gray-700">countries and regions</p>
           </div>
-      </div>
-
+        </div>
       </section>
 
       <section className="flex flex-wrap justify-center gap-6 p-6">
@@ -269,7 +267,6 @@ function HomePage() {
 
       <section className="p-6">
         <div className="grid grid-cols-3 gap-6">
-          {/* {sections.map((section, idx) => ( */}
           <div>
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg font-bold text-gray-900">
@@ -283,45 +280,16 @@ function HomePage() {
                 View more
               </a>
             </div>
-            {/* Section Title */}
+
             <div className="bg-white p-4 rounded-xl shadow-md">
               <div className="flex-1">
-                <Slider />
+                <ResponsiveSlider
+                  images={["/B2B/slide1.webp", "/B2B/slide2.jpeg", "/B2B/slide3.webp"]}
+                  height="h-64"
+                  objectFit="object-contain"
+                />
               </div>
             </div>
-
-            {/* Product Cards 
-              <div className="grid gap-4">
-                {section.items.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative bg-gray-100 rounded-lg overflow-hidden p-4"
-                  >
-                    {item.image && (
-                      <Image
-                        src={item.image}
-                        alt={item.title || "Product"}
-                        width={300}
-                        height={200}
-                        className="rounded-lg"
-                      />
-                    )}
-                    {item.discount && (
-                      <span className="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">
-                        {item.discount}
-                      </span>
-                    )}
-                    {item.title && (
-                      <h3 className="text-sm font-semibold mt-2">
-                        {item.title}
-                      </h3>
-                    )}
-                    {item.subtitle && (
-                      <p className="text-xs text-gray-600">{item.subtitle}</p>
-                    )}
-                  </div>
-                ))}
-              </div>*/}
           </div>
 
           <div>
@@ -337,11 +305,6 @@ function HomePage() {
                 View more
               </a>
             </div>
-
-            {/* Section Title */}
-            {/* <div className="bg-white p-4 rounded-xl shadow-md"> */}
-
-            {/* <div className="bg-gray-100 p-6 rounded-lg"> */}
 
             <div className="bg-white p-4 rounded-lg shadow-md">
               <p className="text-gray-600 font-semibold mb-4">
@@ -382,12 +345,11 @@ function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold">New this week</h3>
                   <p className="text-gray-500">
-                  Exclusive Products from Verified Suppliers
+                    Exclusive Products from Verified Suppliers
                   </p>
                 </div>
               </div>
             </div>
-            {/* </div> */}
           </div>
 
           <div>
@@ -421,7 +383,7 @@ function HomePage() {
                 <div>
                   <h3 className="text-lg font-bold">New this week</h3>
                   <p className="text-gray-500">
-                  Exclusive Products from Verified Suppliers
+                    Exclusive Products from Verified Suppliers
                   </p>
                 </div>
               </div>
@@ -438,8 +400,6 @@ function HomePage() {
             </div>
             {/* </div> */}
           </div>
-
-          {/* ))} */}
         </div>
       </section>
 
@@ -526,7 +486,8 @@ function HomePage() {
           {/* Title and Description */}
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h2 className="text-3xl font-bold">
-            Trade with confidence—ensuring top-notch production quality and secure purchase protection
+              Trade with confidence—ensuring top-notch production quality and
+              secure purchase protection
             </h2>
           </div>
 
@@ -535,13 +496,16 @@ function HomePage() {
             {/* First Card */}
             <div className="bg-white bg-opacity-10 p-6 rounded-lg border border-black">
               <h3 className="text-lg text-black mb-2">
-              Ensure Production Quality with
+                Ensure Production Quality with
               </h3>
               <h2 className="text-2xl font-bold flex items-center">
                 <span className="text-blue-500">Verified</span> Supplier
               </h2>
               <p className="text-black-300 mt-3">
-              Connect with a network of trusted suppliers, each with third-party-verified credentials and capabilities. Look for the "Verified" badge to source confidently from experienced suppliers your business can rely on.
+                Connect with a network of trusted suppliers, each with
+                third-party-verified credentials and capabilities. Look for the
+                "Verified" badge to source confidently from experienced
+                suppliers your business can rely on.
               </p>
               <div className="mt-5 flex items-center gap-4">
                 <button className="bg-white text-black px-4 py-2 rounded-full flex items-center">
@@ -556,7 +520,7 @@ function HomePage() {
             {/* Second Card */}
             <div className="bg-white bg-opacity-10 p-6 rounded-lg border border-black">
               <h3 className="text-lg text-black mb-2">
-              Secure Your Purchase with
+                Secure Your Purchase with
               </h3>
               <h2 className="text-2xl font-bold flex items-center">
                 <span className="bg-yellow-500 text-black px-2 py-1 rounded mr-2">

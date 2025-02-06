@@ -10,6 +10,9 @@ export default {
       maxWidth: {
         lg: '41rem', // Add your custom max-width value
       },
+      spacing: {
+        '56': '13.7rem',
+    },
       colors: {
         primary: "#E63946", // Red
         dark: "#0D0D0D", // Deep Black

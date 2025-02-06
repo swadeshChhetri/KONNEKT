@@ -6,48 +6,10 @@ import { products } from "@/data/products";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft, Mic, ArrowRight } from "lucide-react";
-import Slider from "@/components/Slider";
 import CategorySlider from "@/components/CategorySlider";
 import ProductCard from "@/components/ProductCard";
+import ResponsiveSlider from "@/components/Slider";
 
-// const products = [
-//   {
-//     image: "/images/product1.png",
-//     name: "C Type Power Press Machine",
-//     price: "300000.00 INR (Approx.)",
-//     company: "JAY SHAKTI MACHINE",
-//   },
-//   {
-//     image: "/images/product2.png",
-//     name: "Designer Printed Bandhani Suit Material",
-//     price: "500 INR (Approx.)",
-//     company: "JAYSHREE BANDHEJ",
-//   },
-//   {
-//     image: "/images/product3.png",
-//     name: "High Performance Automatic Potato Planter",
-//     price: "Unit/Units",
-//     company: "M/S JANDU",
-//   },
-//   {
-//     image: "/images/product4.png",
-//     name: "Top Rated Epoxy Hardener",
-//     price: "-",
-//     company: "NOVEL CHEM",
-//   },
-//   {
-//     image: "/images/product5.png",
-//     name: "Eco-Friendly 99.9% Pure A Grade Chemical",
-//     price: "33 INR (Approx.)",
-//     company: "DESTINY CHEMICALS",
-//   },
-//   {
-//     image: "/images/product6.png",
-//     name: "Briquette Crusher",
-//     price: "1100000 INR (Approx.)",
-//     company: "ECOMAN",
-//   },
-// ];
 
 const testimonials = [
   {
@@ -98,9 +60,7 @@ const homeCategories = [
   { name: "Jackets", image: "/B2B/14.jpg" },
 ];
 
-
-export default  function ProductsPageWrapper() {
-
+export default function ProductsPageWrapper() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [index, setIndex] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
@@ -126,20 +86,25 @@ export default  function ProductsPageWrapper() {
     },
   ];
 
-    // Move the slider left
-    const slideLeft = () => {
-      setIndex((prev) => Math.max(prev - 1, 0));
-    };
-  
-    // Move the slider right
-    const slideRight = () => {
-      setIndex((prev) => Math.min(prev + 1, categories.length - 3));
-    }
-  return(
+  // Move the slider left
+  const slideLeft = () => {
+    setIndex((prev) => Math.max(prev - 1, 0));
+  };
+
+  // Move the slider right
+  const slideRight = () => {
+    setIndex((prev) => Math.min(prev + 1, categories.length - 3));
+  };
+  return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-24 ">
-        <section className="bg-gray-200  text-center">
-          <div>
+
+        <section className="bg-gray-200 text-center relative">
+          <div
+            className="relative inline-flex"
+            onMouseEnter={() => setHoveredCategory(hoveredCategory)} // Keep content open
+            onMouseLeave={() => setHoveredCategory(null)} // Close when leaving
+          >
             {/* Sidebar */}
             <div className="bg-white shadow-md p-4">
               <h2 className="text-lg font-bold mb-4">Top Categories</h2>
@@ -149,9 +114,8 @@ export default  function ProductsPageWrapper() {
                     key={index}
                     className="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-100 transition"
                     onMouseEnter={() => setHoveredCategory(category.name)}
-                    onMouseLeave={() => setHoveredCategory(null)}
                   >
-                    {category.name}
+                    <span>{category.name}</span>
                   </li>
                 ))}
               </ul>
@@ -159,7 +123,11 @@ export default  function ProductsPageWrapper() {
 
             {/* Hover Content Panel */}
             {hoveredCategory && (
-              <div className="absolute left-64 top-0 w-72 bg-gray-50 shadow-lg pl-4 z-10 mt-24 h-2/3">
+              <div
+                className="absolute left-56 top-0 w-72 bg-gray-50 shadow-lg pl-4 z-10 mt-4 p-4 h-96"
+                onMouseEnter={() => setHoveredCategory(hoveredCategory)} // Keep content open
+                onMouseLeave={() => setHoveredCategory(null)} // Close when leaving
+              >
                 <h3 className="text-lg font-semibold">{hoveredCategory}</h3>
                 <p className="text-sm text-gray-600">
                   {
@@ -184,7 +152,11 @@ export default  function ProductsPageWrapper() {
         </section>
 
         <section className="bg-gray-200 col-span-2 ">
-          <Slider />
+        <ResponsiveSlider 
+            images={["/B2B/slide3.webp", "/B2B/slide2.jpeg", "/B2B/slide3.webp"]} 
+            height="h-96" 
+            objectFit="object-contain" 
+            />
         </section>
 
         <section className="bg-gray-400  text-center">
@@ -217,13 +189,11 @@ export default  function ProductsPageWrapper() {
         <CategorySlider categories={homeCategories} />
       </div>
 
-
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-20">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
-      ))}
+        ))}
       </div>
-
 
       <div className="flex items-center justify-center min-h-screen bg-[#fdfbf5] px-6 py-12">
         <div className="bg-white shadow-lg rounded-2xl flex max-w-5xl w-full overflow-hidden">
@@ -307,4 +277,3 @@ export default  function ProductsPageWrapper() {
     </div>
   );
 }
-
