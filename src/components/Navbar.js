@@ -10,6 +10,7 @@ import {
   MapPin,
   ChevronDown,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Header() {
   const pathname = usePathname();
@@ -44,9 +45,15 @@ export default function Header() {
                   className="w-full p-2 border rounded-md text-sm"
                 />
                 <ul className="mt-2 text-sm">
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer">Delhi</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer">Mumbai</li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer">Bengaluru</li>
+                  <li className="p-2 hover:bg-gray-100 cursor-pointer">
+                    Delhi
+                  </li>
+                  <li className="p-2 hover:bg-gray-100 cursor-pointer">
+                    Mumbai
+                  </li>
+                  <li className="p-2 hover:bg-gray-100 cursor-pointer">
+                    Bengaluru
+                  </li>
                 </ul>
               </div>
             )}
@@ -56,11 +63,11 @@ export default function Header() {
         {/* Search Bar */}
         <div className="flex items-center border rounded-full px-4 py-2 w-1/2">
           {!isTradePage && (
-          <select className="text-sm text-light bg-dark focus:outline-none">
-            <option>Products</option>
-            <option>Suppliers</option>
-            <option>Categories</option>
-          </select>
+            <select className="text-sm text-light bg-dark focus:outline-none">
+              <option>Products</option>
+              <option>Suppliers</option>
+              <option>Categories</option>
+            </select>
           )}
           <input
             type="text"
@@ -82,25 +89,33 @@ export default function Header() {
                 <span className="font-semibold ">US</span>
               </div>
 
-              <ShoppingCart size={20} className="" />
+              <Link href="/cart">
+                <ShoppingCart size={20} className="" />
+              </Link>
             </>
           )}
 
           {/* Sign Up Button */}
           <button className="font-semibold flex  hover:bg-red-700 rounded-xl p-1">
-            <User size={20} className="" />
+            <Link href="/checkout">
+              <User size={20} className="" />
+            </Link>
+            <Link href="/signup">
             Sign Up
+            </Link>
           </button>
           <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700">
+            <Link href="/login">
             Sign In
+            </Link>
           </button>
 
           {isTradePage && (
-          <div className="bg-blue-100 px-2 py-2 rounded-md text-blue-800 text-xs w-32">
-            Registered Users <br />
-            <span className="text-sm">1,11,01,168</span>
-          </div>
-        )}
+            <div className="bg-blue-100 px-2 py-2 rounded-md text-blue-800 text-xs w-32">
+              Registered Users <br />
+              <span className="text-sm">1,11,01,168</span>
+            </div>
+          )}
         </div>
       </nav>
     </header>

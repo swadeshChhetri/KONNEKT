@@ -54,19 +54,19 @@ function HomePage() {
 
   const cards1 = [
     {
-      img: "/factory.jpg", // Replace with actual image paths
+      img: "/B2B/18.jpg", // Replace with actual image paths
       title: "Connect with Top-Ranking Manufacturers",
       link: "#",
       linkText: "View more",
     },
     {
-      img: "/samples.jpg",
+      img: "/B2B/16.jpg",
       title: "Request Samples with Ease",
       link: "#",
       linkText: "View more",
     },
     {
-      img: "/live-tour.jpg",
+      img: "/B2B/24.jpg",
       title: "Experience Live Factory Tours",
       link: "#",
       linkText: "View LIVE",
