@@ -196,7 +196,7 @@ function HomePage() {
                 </h3>
                 <a
                   href={card.link}
-                  className="text-white text-sm rounded-[5rem] w-[150px] p-2 bg-primary text-center"
+                  className="text-white text-sm rounded-[5rem] w-[150px] p-4 bg-primary text-center"
                 >
                   {/*      margin: 7rem 4%;
     
@@ -314,22 +314,22 @@ function HomePage() {
               {/* First section with grid images */}
               <div className="grid grid-cols-2 gap-4">
                 <img
-                  src="/images/jacket.png"
+                  src="/B2B/15.jpg"
                   alt="Jacket"
                   className="rounded-lg w-full h-auto"
                 />
                 <img
-                  src="/images/earbuds.png"
+                  src="/B2B/16.jpg"
                   alt="Earbuds"
                   className="rounded-lg w-full h-auto"
                 />
                 <img
-                  src="/images/headphones.png"
+                  src="/B2B/17.jpg"
                   alt="Headphones"
                   className="rounded-lg w-full h-auto"
                 />
                 <img
-                  src="/images/bottles.png"
+                  src="/B2B/18.jpg"
                   alt="Bottles"
                   className="rounded-lg w-full h-auto"
                 />
@@ -338,7 +338,7 @@ function HomePage() {
               {/* Second section with an image and text */}
               <div className="bg-gray-50 p-4 mt-6 rounded-lg flex items-center gap-4">
                 <img
-                  src="/images/batteries.png"
+                  src="/B2B/19.jpg"
                   alt="Batteries"
                   className="w-24 h-24 rounded-lg"
                 />
@@ -376,7 +376,7 @@ function HomePage() {
 
               <div className="bg-gray-50 p-2 mt-2 rounded-lg flex items-center gap-4">
                 <img
-                  src="/images/batteries.png"
+                  src="/B2B/19.jpg"
                   alt="Batteries"
                   className="w-24 h-24 rounded-lg"
                 />
@@ -390,7 +390,7 @@ function HomePage() {
 
               <div>
                 <img
-                  src="/images/jacket.png"
+                  src="/B2B/20.jpg"
                   alt="Jacket"
                   className="rounded-lg w-full h-auto"
                 />
@@ -471,7 +471,7 @@ function HomePage() {
           {/* Image Section */}
           <div className="relative">
             <Image
-              src="/search-products.jpg" // Replace with actual image
+              src="/B2B/21.jpg" // Replace with actual image
               alt="Product Search"
               width={500}
               height={400}

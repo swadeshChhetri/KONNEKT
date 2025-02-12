@@ -161,6 +161,10 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          <p className="text-gray-500 text-xs">
+            Designed and developed by <span>SkyCode IT Solution</span>
+          </p>
         </div>
     </footer>
   )
