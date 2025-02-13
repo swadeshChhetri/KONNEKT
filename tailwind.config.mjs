@@ -14,11 +14,12 @@ export default {
         '56': '13.7rem',
     },
       colors: {
-        primary: "#E63946", // Red
-        dark: "#0D0D0D", // Deep Black
-        light: "#F5F5F5", // Soft White
-        grayDark: "#1E1E1E", // Optional Dark Gray
-        grayLight: "#E0E0E0", // Op
+        primary: "#1E3A8A", // Deep Blue
+        secondary: "#DC2626", // Red
+        accent: "#0F172A", // Black
+        background: "#FFFFFF", // White
+        foreground: "#1F2937", // Dark Gray for text
+        lightBlue: "#3B82F6", // Light Blue
       },
     },
   },

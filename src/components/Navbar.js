@@ -18,7 +18,7 @@ export default function Header() {
   const [locationOpen, setLocationOpen] = useState(false);
 
   return (
-    <header className="bg-blue-600 w-full text-light fixed shadow-md z-50">
+    <header className="bg-background w-full text-light fixed shadow-md z-50">
       <nav className="flex items-center justify-between bg-dark text-light px-6 py-3 border-b shadow-sm">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -30,7 +30,7 @@ export default function Header() {
           <div className="relative">
             <button
               onClick={() => setLocationOpen(!locationOpen)}
-              className="flex items-center space-x-1 text-gray-600 hover:bg-red-700"
+              className="flex items-center space-x-1 text-gray-600 "
             >
               <MapPin className="w-5 h-5" />
               <span>All Cities</span>
