@@ -2,8 +2,8 @@
 
 "use client";
 import Image from "next/image";
-import { products } from "@/data/products";
-import { useEffect, useState } from "react";
+// import { products } from "@/data/products";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ChevronRight, ChevronLeft, Mic, ArrowRight } from "lucide-react";
 import CategorySlider from "@/components/CategorySlider";
@@ -25,10 +25,135 @@ import {
   Car,
   Box,
 } from "lucide-react";
+import { Landmark } from "lucide-react";
+import { AnimatePresence } from "framer-motion";
+import { Quote } from "lucide-react";
 
+const products = [
+  {
+    name: "Disposable Shoe Cover",
+    price: 2.5,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Ultrasonic Cleaners",
+    price: 2500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Polished Acoustic Chair",
+    price: 4300,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Copper Pooja Kalash",
+    price: 500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Printed Promotion Umbrella",
+    price: 163,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Cotton Printed Dupatta",
+    price: 120,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sample Product 7",
+    price: 999,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sample Product 8",
+    price: 799,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Disposable Shoe Cover",
+    price: 2.5,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Ultrasonic Cleaners",
+    price: 2500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Polished Acoustic Chair",
+    price: 4300,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Copper Pooja Kalash",
+    price: 500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Printed Promotion Umbrella",
+    price: 163,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Cotton Printed Dupatta",
+    price: 120,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sample Product 7",
+    price: 999,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sample Product 8",
+    price: 799,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Disposable Shoe Cover",
+    price: 2.5,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Ultrasonic Cleaners",
+    price: 2500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Polished Acoustic Chair",
+    price: 4300,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Copper Pooja Kalash",
+    price: 500,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Printed Promotion Umbrella",
+    price: 163,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Cotton Printed Dupatta",
+    price: 120,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sample Product 7",
+    price: 999,
+    image: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Sample Product 8",
+    price: 799,
+    image: "https://via.placeholder.com/150",
+  },
+  // Add more products as needed...
+];
 
-
-const testimonials = [
+const testimonials2 = [
   {
     id: 1,
     name: "Mr. Ankur Aggarwal",
@@ -77,10 +202,46 @@ const homeCategories = [
   { name: "Jackets", image: "/B2B/14.jpg" },
 ];
 
+const testimonials = [
+  {
+    name: "Mr. Patel Hiren",
+    company: "Spice Villa Export, India",
+    feedback:
+      "ExportersIndia portal is quite effective. I am getting a lot of orders throughout the world. I am one happy client...",
+  },
+  {
+    name: "Shelly Luo",
+    company: "Viss Lighting, China",
+    feedback:
+      "Viss Lighting is one of the top manufacturers in the LED display & lighting industry with over 7 years of experience...",
+  },
+  {
+    name: "Jalpenkumar",
+    company: "Bhrza Technologies Company, India",
+    feedback:
+      "I want to thank my Relationship Manager for his support and guidance. I believed in him and the services of your portal...",
+  },
+];
+
+
+
+
+
+
 export default function ProductsPageWrapper() {
   const [hoveredCategory, setHoveredCategory] = useState(null);
   const [index, setIndex] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
+  const [direction, setDirection] = useState(1); 
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setDirection(1);
+      setIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const categories2 = [
     { icon: User, label: "" },
@@ -263,6 +424,21 @@ export default function ProductsPageWrapper() {
     
   ];
 
+  const cities = [
+    { name: "Delhi", icon: <Landmark size={40} /> },
+    { name: "Gurugram", icon: <Landmark size={40} /> },
+    { name: "Noida", icon: <Landmark size={40} /> },
+    { name: "Bengaluru", icon: <Landmark size={40} /> },
+    { name: "Chennai", icon: <Landmark size={40} /> },
+    { name: "Mumbai", icon: <Landmark size={40} /> },
+    { name: "Ahmedabad", icon: <Landmark size={40} /> },
+    { name: "Kolkata", icon: <Landmark size={40} /> },
+    { name: "Pune", icon: <Landmark size={40} /> },
+    { name: "Surat", icon: <Landmark size={40} /> },
+    { name: "Hyderabad", icon: <Landmark size={40} /> },
+    { name: "More Cities", icon: <Landmark size={40} /> },
+  ];
+
   
 
   const cards2 = [
@@ -289,6 +465,30 @@ export default function ProductsPageWrapper() {
   const slideRight = () => {
     setIndex((prev) => Math.min(prev + 1, categories.length - 3));
   };
+
+  const scrollContainerRef = useRef(null);
+const [canScrollLeft, setCanScrollLeft] = useState(false);
+
+// Scroll 300px to the right
+const handleScrollRight = () => {
+  if (scrollContainerRef.current) {
+    scrollContainerRef.current.scrollLeft += 300;
+  }
+};
+
+// Scroll 300px to the left
+const handleScrollLeft = () => {
+  if (scrollContainerRef.current) {
+    scrollContainerRef.current.scrollLeft -= 300;
+  }
+};
+
+// Show/hide left arrow based on scroll position
+const handleScroll = (e) => {
+  const scrollLeft = e.currentTarget.scrollLeft;
+  setCanScrollLeft(scrollLeft > 0);
+};
+
 
   return (
     <div>
@@ -545,6 +745,22 @@ export default function ProductsPageWrapper() {
         </div>
       </div>
 
+      <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+      <h2 className="text-xl font-bold text-center mb-4">Find Suppliers from Top Cities</h2>
+      <div className="grid grid-cols-4 gap-6 justify-items-center">
+        {cities.map((city, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.1, borderColor: "#007BFF" }}
+            className="flex flex-col items-center justify-center w-24 h-24 border-2 border-gray-300 rounded-full cursor-pointer transition-all duration-200 ease-in-out"
+          >
+            {city.icon}
+            <span className="text-sm font-medium mt-2">{city.name}</span>
+          </motion.div>
+        ))}
+      </div>
+    </div>
+
       {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-20">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} section="BusinessProducts" />
@@ -630,6 +846,85 @@ export default function ProductsPageWrapper() {
           </div>
         </div>
       </div>
+
+      <div className="bg-gray-100 p-10 rounded-lg shadow-md text-center">
+      <h2 className="text-2xl font-bold mb-6">CLIENT TESTIMONIAL</h2>
+      <div className="relative w-full max-w-4xl mx-auto overflow-hidden">
+        <div className="w-full flex items-center justify-center">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={index}
+              initial={{ x: direction === 1 ? "100%" : "-100%", opacity: 0 }}
+              animate={{ x: "0%", opacity: 1 }}
+              exit={{ x: direction === 1 ? "-100%" : "100%", opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="bg-white p-6 rounded-lg shadow-md w-full"
+            >
+              <Quote className="text-orange-500 w-8 h-8 mb-4" />
+              <p className="text-gray-700 text-lg">{testimonials[index].feedback}</p>
+              <p className="font-bold mt-4">{testimonials[index].name}</p>
+              <p className="text-gray-500">{testimonials[index].company}</p>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </div>
+
+      {/* Pagination Dots */}
+      <div className="flex justify-center mt-4 space-x-2">
+        {testimonials.map((_, i) => (
+          <div
+            key={i}
+            className={`w-3 h-3 rounded-full transition-all ${
+              i === index ? "bg-orange-500" : "bg-gray-400"
+            }`}
+          ></div>
+        ))}
+      </div>
+    </div>
+
+    <main className="min-h-screen bg-gray-100 p-6">
+      <h1 className="text-2xl font-bold mb-4">POPULAR PRODUCTS</h1>
+      <div className="relative bg-white p-4 rounded shadow">
+        {/* Left Arrow: Only shows when user has scrolled right */}
+        {canScrollLeft && (
+          <button
+            onClick={handleScrollLeft}
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow hidden md:block"
+          >
+            <ChevronLeft size={20} />
+          </button>
+        )}
+
+        {/* Scrollable Container */}
+        <div className="overflow-hidden">
+          <div
+            ref={scrollContainerRef}
+            onScroll={handleScroll}
+            className="grid grid-flow-col grid-rows-2 gap-4 auto-cols-[200px] overflow-x-scroll scroll-smooth"
+          >
+            {products.map((product, index) => (
+              <div key={index} className="border p-2 rounded shadow-sm">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-32 object-cover mb-2"
+                />
+                <p className="font-semibold text-sm mb-1">{product.name}</p>
+                <p className="text-gray-600 text-sm">₹ {product.price} / Piece</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right Arrow: Always shown (you can add logic to hide it if needed) */}
+        <button
+          onClick={handleScrollRight}
+          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow hidden md:block"
+        >
+          <ChevronRight size={20} />
+        </button>
+      </div>
+    </main>
     </div>
   );
 }
