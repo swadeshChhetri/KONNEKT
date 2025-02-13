@@ -17,7 +17,7 @@ export default function Signup() {
     >
       <div className="bg-white p-6 rounded-2xl shadow-lg w-96 mt-16">
         <h2 className="text-2xl font-bold text-center mb-4">
-          <span className="text-blue-600">Sign Up</span> to Join Zonely
+          <span className="text-blue-600">Sign Up</span> to Join KONNKT
         </h2>
         <p className="text-gray-500 text-center mb-4">
           Ease of scheduling across the globe
@@ -77,7 +77,7 @@ export default function Signup() {
         </div>
         <p className="text-xs text-center text-gray-500 mt-4">
           By clicking “Sign Up”, you acknowledge that you have read and
-          understood, and agree to Zonely’s
+          understood, and agree to KONNKT’s
           <a href="#" className="text-blue-600"> Terms and Conditions </a>
           and
           <a href="#" className="text-blue-600"> Privacy Policy</a>

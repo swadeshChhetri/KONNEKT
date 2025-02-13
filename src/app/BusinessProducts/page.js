@@ -9,6 +9,23 @@ import { ChevronRight, ChevronLeft, Mic, ArrowRight } from "lucide-react";
 import CategorySlider from "@/components/CategorySlider";
 import ProductCard from "@/components/ProductCard";
 import ResponsiveSlider from "@/components/Slider";
+import {
+  User,
+  Shirt,
+  Home,
+  FlaskConical,
+  Package,
+  Gem,
+  ShoppingBag,
+  Leaf,
+  Headphones,
+  Dumbbell,
+  Briefcase,
+  Baby,
+  Car,
+  Box,
+} from "lucide-react";
+
 
 
 const testimonials = [
@@ -31,7 +48,7 @@ const valueAdds = [
   { title: "For Business", desc: "Google Workspace" },
 ];
 
-const categories = [
+const categories1 = [
   { name: "Health & Beauty", content: "Various beauty products & services." },
   { name: "Apparel & Fashion", content: "Trendy clothing and fashion items." },
   { name: "Chemicals", content: "Industrial and household chemicals." },
@@ -65,6 +82,189 @@ export default function ProductsPageWrapper() {
   const [index, setIndex] = useState(0);
   const [isRecording, setIsRecording] = useState(false);
 
+  const categories2 = [
+    { icon: User, label: "" },
+    { icon: Shirt, label: "" },
+    { icon: Home, label: "" },
+    { icon: FlaskConical, label: "" },
+    { icon: Package, label: "" },
+    { icon: Gem, label: "" },
+    { icon: ShoppingBag, label: "" },
+    { icon: Leaf, label: "" },
+    { icon: Headphones, label: "" },
+    { icon: Dumbbell, label: "" },
+    { icon: Briefcase, label: "" },
+    { icon: Baby, label: "" },
+    { icon: Car, label: "" },
+    { icon: Box, label: "" },
+    { icon: Car, label: "" },
+    { icon: Box, label: "" },
+  ];
+
+  const categories3 = [
+    {
+      title: "Prefabricated & Portable Build...",
+      links: [
+        "Office Container",
+        "Portable Cabins",
+        "Mobile Cabins",
+        "Security Cabins",
+      ],
+      image: "/prefab.png",
+    },
+    {
+      title: "Hardware Fittings and Access...",
+      links: ["Steel Angles", "MS Channel", "Ferrules", "Brackets"],
+      image: "/hardware.png",
+    },
+    {
+      title: "Door & Window Fittings",
+      links: [
+        "Stainless Steel Door Hardware",
+        "Door Handles",
+        "Brass Handles",
+        "Door Hardware",
+      ],
+      image: "/door.png",
+    },
+    {
+      title: "Paints, Varnishes & Wall Putty",
+      links: ["Paints", "Special Purpose Paints", "Primer Paint", "Wall Putty"],
+      image: "/paints.png",
+    },
+    {
+      title: "Sanitary Ware & Fittings",
+      links: [
+        "Bathroom Sanitary Ware",
+        "Water Closet",
+        "Pedestal Wash Basin",
+        "Kitchen Sink",
+      ],
+      image: "/sanitary.png",
+    },
+    {
+      title: "Pipe & Tube Fittings",
+      links: [
+        "Industrial Coupler",
+        "Forged Pipe Fittings",
+        "Forged Steel Fittings",
+        "Thermowell",
+      ],
+      image: "/pipe.png",
+    },
+    
+  ];
+
+  const categories4 = [
+    {
+      title: "Prefabricated & Portable Build...",
+      links: [
+        "Office Container",
+        "Portable Cabins",
+        "Mobile Cabins",
+        "Security Cabins",
+      ],
+      image: "/prefab.png",
+    },
+    {
+      title: "Hardware Fittings and Access...",
+      links: ["Steel Angles", "MS Channel", "Ferrules", "Brackets"],
+      image: "/hardware.png",
+    },
+    {
+      title: "Door & Window Fittings",
+      links: [
+        "Stainless Steel Door Hardware",
+        "Door Handles",
+        "Brass Handles",
+        "Door Hardware",
+      ],
+      image: "/door.png",
+    },
+    {
+      title: "Paints, Varnishes & Wall Putty",
+      links: ["Paints", "Special Purpose Paints", "Primer Paint", "Wall Putty"],
+      image: "/paints.png",
+    },
+    {
+      title: "Sanitary Ware & Fittings",
+      links: [
+        "Bathroom Sanitary Ware",
+        "Water Closet",
+        "Pedestal Wash Basin",
+        "Kitchen Sink",
+      ],
+      image: "/sanitary.png",
+    },
+    {
+      title: "Pipe & Tube Fittings",
+      links: [
+        "Industrial Coupler",
+        "Forged Pipe Fittings",
+        "Forged Steel Fittings",
+        "Thermowell",
+      ],
+      image: "/pipe.png",
+    },
+    
+  ];
+
+  const categories5 = [
+    {
+      title: "Prefabricated & Portable Build...",
+      links: [
+        "Office Container",
+        "Portable Cabins",
+        "Mobile Cabins",
+        "Security Cabins",
+      ],
+      image: "/prefab.png",
+    },
+    {
+      title: "Hardware Fittings and Access...",
+      links: ["Steel Angles", "MS Channel", "Ferrules", "Brackets"],
+      image: "/hardware.png",
+    },
+    {
+      title: "Door & Window Fittings",
+      links: [
+        "Stainless Steel Door Hardware",
+        "Door Handles",
+        "Brass Handles",
+        "Door Hardware",
+      ],
+      image: "/door.png",
+    },
+    {
+      title: "Paints, Varnishes & Wall Putty",
+      links: ["Paints", "Special Purpose Paints", "Primer Paint", "Wall Putty"],
+      image: "/paints.png",
+    },
+    {
+      title: "Sanitary Ware & Fittings",
+      links: [
+        "Bathroom Sanitary Ware",
+        "Water Closet",
+        "Pedestal Wash Basin",
+        "Kitchen Sink",
+      ],
+      image: "/sanitary.png",
+    },
+    {
+      title: "Pipe & Tube Fittings",
+      links: [
+        "Industrial Coupler",
+        "Forged Pipe Fittings",
+        "Forged Steel Fittings",
+        "Thermowell",
+      ],
+      image: "/pipe.png",
+    },
+    
+  ];
+
+  
+
   const cards2 = [
     {
       img: "/b2b.jpg", // Replace with actual image paths
@@ -75,12 +275,6 @@ export default function ProductsPageWrapper() {
     {
       img: "/b2c.jpg",
       title: "Business-to-Consumer",
-      link: "#",
-      linkText: "View more",
-    },
-    {
-      img: "/b2c.jpg",
-      title: "Add your Content",
       link: "#",
       linkText: "View more",
     },
@@ -95,11 +289,11 @@ export default function ProductsPageWrapper() {
   const slideRight = () => {
     setIndex((prev) => Math.min(prev + 1, categories.length - 3));
   };
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 pt-24 ">
-
-        <section className="bg-gray-200 text-center relative">
+        <section className="text-center relative">
           <div
             className="relative inline-flex"
             onMouseEnter={() => setHoveredCategory(hoveredCategory)} // Keep content open
@@ -109,7 +303,7 @@ export default function ProductsPageWrapper() {
             <div className="bg-white shadow-md p-4">
               <h2 className="text-lg font-bold mb-4">Top Categories</h2>
               <ul className="space-y-2">
-                {categories.map((category, index) => (
+                {categories1.map((category, index) => (
                   <li
                     key={index}
                     className="flex items-center p-2 rounded-md cursor-pointer hover:bg-gray-100 transition"
@@ -131,7 +325,7 @@ export default function ProductsPageWrapper() {
                 <h3 className="text-lg font-semibold">{hoveredCategory}</h3>
                 <p className="text-sm text-gray-600">
                   {
-                    categories.find((cat) => cat.name === hoveredCategory)
+                    categories1.find((cat) => cat.name === hoveredCategory)
                       ?.content
                   }
                 </p>
@@ -151,15 +345,19 @@ export default function ProductsPageWrapper() {
           </div>
         </section>
 
-        <section className="bg-gray-200 col-span-2 ">
-        <ResponsiveSlider 
-            images={["/B2B/slide3.webp", "/B2B/slide2.jpeg", "/B2B/slide3.webp"]} 
-            height="h-96" 
-            objectFit="object-contain" 
-            />
+        <section className="col-span-2 ">
+          <ResponsiveSlider
+            images={[
+              "/B2B/slide3.webp",
+              "/B2B/slide2.jpeg",
+              "/B2B/slide3.webp",
+            ]}
+            height="h-[29rem]"
+            objectFit="object-contain"
+          />
         </section>
 
-        <section className="bg-gray-400  text-center">
+        <section className="text-center">
           <div className="grid grid-cols-1 gap-6 m-4">
             {cards2.map((card, index) => (
               <div key={index} className="relative rounded-lg overflow-hidden">
@@ -168,7 +366,7 @@ export default function ProductsPageWrapper() {
                   alt={card.title}
                   width={500}
                   height={300}
-                  className="w-full h-32 object-cover"
+                  className="w-full h-[12rem] object-cover"
                 />
                 <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex flex-col justify-between p-4">
                   <h3 className="text-white text-lg font-semibold">
@@ -184,16 +382,174 @@ export default function ProductsPageWrapper() {
         </section>
       </div>
 
+      <section className="flex flex-wrap justify-center gap-6 p-6">
+        {categories2.map(({ icon: Icon, label }, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center w-32 h-32 border-2 border-gray-200 rounded-full hover:shadow-lg transition"
+          >
+            <Icon className="w-8 h-8 text-gray-700" />
+            <p className="text-sm text-center mt-2 text-gray-700">{label}</p>
+          </div>
+        ))}
+      </section>
+
+ 
+
       <div className="relative w-full px-6">
         <h2 className="text-lg font-bold mb-4">Trending Categories</h2>
         <CategorySlider categories={homeCategories} />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-20">
+      <div className="p-6">
+        <h2 className="text-2xl font-semibold mb-4">
+          Realestate, Building & Construction
+        </h2>
+        <div className="border border-gray-300 rounded-lg p-4 grid md:grid-cols-3 gap-4">
+          <motion.div
+            className="relative col-span-1 bg-cover bg-center text-white p-6 rounded-lg flex flex-col justify-end"
+            style={{ backgroundImage: "url('/construction-bg.jpg')" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-lg font-semibold">Wood and Lumber</p>
+            <p>Cladding Materials and Building Panels</p>
+            <p>Bricks & Construction Materials</p>
+            <p>Doors & Windows</p>
+            <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg">
+              View All
+            </button>
+          </motion.div>
+
+          <div className="col-span-2 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {categories3.map((category, index) => (
+              <motion.div
+                key={index}
+                className="border p-4 rounded-lg flex justify-between items-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div>
+                  <h3 className="font-semibold text-lg">{category.title}</h3>
+                  {category.links.map((link, i) => (
+                    <p key={i} className="text-blue-500 text-sm cursor-pointer">
+                      {link}
+                    </p>
+                  ))}
+                </div>
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-16 h-16 object-cover"
+                />
+                <ArrowRight className="text-blue-500" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="p-6">
+        <h2 className="text-2xl font-semibold mb-4">
+          Realestate, Building & Construction
+        </h2>
+        <div className="border border-gray-300 rounded-lg p-4 grid md:grid-cols-3 gap-4">
+          <motion.div
+            className="relative col-span-1 bg-cover bg-center text-white p-6 rounded-lg flex flex-col justify-end"
+            style={{ backgroundImage: "url('/construction-bg.jpg')" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-lg font-semibold">Wood and Lumber</p>
+            <p>Cladding Materials and Building Panels</p>
+            <p>Bricks & Construction Materials</p>
+            <p>Doors & Windows</p>
+            <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg">
+              View All
+            </button>
+          </motion.div>
+
+          <div className="col-span-2 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {categories4.map((category, index) => (
+              <motion.div
+                key={index}
+                className="border p-4 rounded-lg flex justify-between items-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div>
+                  <h3 className="font-semibold text-lg">{category.title}</h3>
+                  {category.links.map((link, i) => (
+                    <p key={i} className="text-blue-500 text-sm cursor-pointer">
+                      {link}
+                    </p>
+                  ))}
+                </div>
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-16 h-16 object-cover"
+                />
+                <ArrowRight className="text-blue-500" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="p-6">
+        <h2 className="text-2xl font-semibold mb-4">
+          Realestate, Building & Construction
+        </h2>
+        <div className="border border-gray-300 rounded-lg p-4 grid md:grid-cols-3 gap-4">
+          <motion.div
+            className="relative col-span-1 bg-cover bg-center text-white p-6 rounded-lg flex flex-col justify-end"
+            style={{ backgroundImage: "url('/construction-bg.jpg')" }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-lg font-semibold">Wood and Lumber</p>
+            <p>Cladding Materials and Building Panels</p>
+            <p>Bricks & Construction Materials</p>
+            <p>Doors & Windows</p>
+            <button className="mt-4 bg-red-500 text-white px-4 py-2 rounded-lg">
+              View All
+            </button>
+          </motion.div>
+
+          <div className="col-span-2 grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+            {categories5.map((category, index) => (
+              <motion.div
+                key={index}
+                className="border p-4 rounded-lg flex justify-between items-center"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div>
+                  <h3 className="font-semibold text-lg">{category.title}</h3>
+                  {category.links.map((link, i) => (
+                    <p key={i} className="text-blue-500 text-sm cursor-pointer">
+                      {link}
+                    </p>
+                  ))}
+                </div>
+                <img
+                  src={category.image}
+                  alt={category.title}
+                  className="w-16 h-16 object-cover"
+                />
+                <ArrowRight className="text-blue-500" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-20">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} section="BusinessProducts" />
         ))}
-      </div>
+      </div> */}
 
       <div className="flex items-center justify-center min-h-screen bg-[#fdfbf5] px-6 py-12">
         <div className="bg-white shadow-lg rounded-2xl flex max-w-5xl w-full overflow-hidden">

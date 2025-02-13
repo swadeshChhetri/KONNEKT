@@ -22,7 +22,7 @@ export default function Header() {
       <nav className="flex items-center justify-between bg-dark text-light px-6 py-3 border-b shadow-sm">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <h4 className="font-semibold text-light">KONNEKT.com</h4>
+          <h4 className="font-semibold text-light">KONNKT.com</h4>
         </div>
 
         {/* Show extra content only on Trade page */}
@@ -65,8 +65,7 @@ export default function Header() {
           {!isTradePage && (
             <select className="text-sm text-light bg-dark focus:outline-none">
               <option>Products</option>
-              <option>Suppliers</option>
-              <option>Categories</option>
+              <option>Company</option>
             </select>
           )}
           <input
@@ -81,20 +80,10 @@ export default function Header() {
 
         {/* Icons and Buttons */}
         <div className="flex items-center space-x-4">
-          {!isTradePage && (
-            <>
-              <div className="flex items-center space-x-1 text-sm mr-4">
-                <Globe size={20} className="" />
-                <span className="">Deliver to:</span>
-                <span className="font-semibold ">US</span>
-              </div>
-
               <Link href="/cart">
                 <ShoppingCart size={20} className="" />
               </Link>
-            </>
-          )}
-
+      
           {/* Sign Up Button */}
           <button className="font-semibold flex  hover:bg-red-700 rounded-xl p-1">
             <Link href="/checkout">
