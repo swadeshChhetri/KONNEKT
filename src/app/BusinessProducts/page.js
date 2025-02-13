@@ -577,8 +577,8 @@ export default function ProductsPageWrapper() {
             key={index}
             className="flex flex-col items-center justify-center w-32 h-32 border-2 border-gray-200 rounded-full transition"
           >
-            <Icon className="w-8 h-8 text-gray-700 transition-transform duration-300 hover:scale-110" />
-            <p className="text-sm text-center mt-2 text-gray-700 transition-colors duration-300 hover:text-blue-600">
+            <Icon className="w-8 h-8 text-gray-700 transition-transform duration-200 hover:scale-110" />
+            <p className="text-sm text-center mt-2 text-gray-700 transition-colors duration-200 hover:text-blue-600">
               {label}
             </p>
           </div>
