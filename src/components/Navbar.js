@@ -26,7 +26,7 @@ export default function Header() {
         </div>
 
         {/* Show extra content only on Trade page */}
-        {isTradePage && (
+    
           <div className="relative">
             <button
               onClick={() => setLocationOpen(!locationOpen)}
@@ -58,22 +58,21 @@ export default function Header() {
               </div>
             )}
           </div>
-        )}
 
         {/* Search Bar */}
         <div className="flex items-center border rounded-full px-4 py-2 w-1/2">
-          {!isTradePage && (
+         
             <select className="text-sm text-light bg-dark focus:outline-none">
               <option>Products</option>
               <option>Company</option>
             </select>
-          )}
+         
           <input
             type="text"
             placeholder="tactical vest"
             className="flex-grow px-2 text-sm focus:outline-none text-light bg-dark"
           />
-          <button className="ml-2 hover:bg-red-700 rounded-md">
+          <button className="ml-2  rounded-md">
             <Search className="" size={20} />
           </button>
         </div>
@@ -85,7 +84,7 @@ export default function Header() {
               </Link>
       
           {/* Sign Up Button */}
-          <button className="font-semibold flex  hover:bg-red-700 rounded-xl p-1">
+          <button className="font-semibold flex  rounded-xl p-1">
             <Link href="/checkout">
               <User size={20} className="" />
             </Link>
@@ -93,18 +92,18 @@ export default function Header() {
             Sign Up
             </Link>
           </button>
-          <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-red-700">
+          <button className="bg-primary text-white px-4 py-2 rounded-full text-sm font-semibold ">
             <Link href="/login">
             Sign In
             </Link>
           </button>
 
-          {isTradePage && (
+        
             <div className="bg-blue-100 px-2 py-2 rounded-md text-blue-800 text-xs w-32">
               Registered Users <br />
               <span className="text-sm">1,11,01,168</span>
             </div>
-          )}
+        
         </div>
       </nav>
     </header>
