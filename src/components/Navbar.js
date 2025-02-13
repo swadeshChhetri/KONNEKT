@@ -22,7 +22,7 @@ export default function Header() {
       <nav className="flex items-center justify-between bg-dark text-light px-6 py-3 border-b shadow-sm">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <h4 className="font-semibold text-light">KONNKT.com</h4>
+          <h4 className="font-semibold text-light">KONNEKT.com</h4>
         </div>
 
         {/* Show extra content only on Trade page */}
