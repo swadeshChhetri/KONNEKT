@@ -6,10 +6,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation"; 
 import { motion } from "framer-motion";
 import { PhoneCall , MessageCircle } from "lucide-react";
+import ContactModal from "../../../components/ContactModal";
 
 const ProductDetails = () => {
   const params = useParams();
   // const [selectedImage, setSelectedImage] = useState("/B2B/1.jpg");
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
   const [count, setCount] = useState(1); // Initial count value
   const router = useRouter(); // Initialize the router
 
@@ -56,24 +58,24 @@ const ProductDetails = () => {
 
       {/* Buttons */}
       <div className="flex gap-3 mt-4">
+          {/* Animated Mobile Icon */}
+          {/* Animated Phone Icon inside the Button */}
+          <button className="btn btn-primary flex items-center" 
+            onClick={() => setIsModalOpen(true)}>
+            <motion.span
+              animate={{ rotate: [0, 10, -10, 0] }}
+              transition={{ repeat: Infinity, duration: 0.5, repeatDelay: 3 }}
+            >
+              <PhoneCall className="w-5 h-5 mr-2" />
+            </motion.span>
+            Contact for Seller
+          </button>
 
-      {/* Animated Mobile Icon */}
- {/* Animated Phone Icon inside the Button */}
- <button className="btn btn-primary flex items-center">
-          <motion.span
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 0.5, repeatDelay: 3 }}
-          >
-            <PhoneCall className="w-5 h-5 mr-2" />
-          </motion.span>
-          Contact for Seller
-        </button>
-
-      <button className="btn btn-outline flex items-center">
-        <MessageCircle className="w-5 h-5 mr-2" />
-        Send Inquiry
-      </button>
-      </div> 
+          <button className="btn btn-outline flex items-center">
+            <MessageCircle className="w-5 h-5 mr-2" />
+            Send Inquiry
+          </button>
+      </div>
 
       {/* Product Details Table */}
       <div className="overflow-x-auto mt-6">
@@ -105,11 +107,9 @@ const ProductDetails = () => {
       <h2 className="text-xl font-semibold">Seller Details</h2>
       <p className="text-gray-600">Aeolus Sustainable Bioenergy Pvt. Ltd.</p>
       <p className="text-gray-500">Location: Surat, Gujarat</p>
-      <div className="flex gap-4">
-        <button className="btn btn-primary">View Number</button>
-        <button className="btn btn-outline">Contact Seller</button>
-      </div>
     </div>
+     {/* Contact Modal */}
+     {isModalOpen && <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />}
   </div>
   );
 };
