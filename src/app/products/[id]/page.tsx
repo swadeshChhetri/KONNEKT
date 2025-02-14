@@ -5,7 +5,7 @@ import {products} from "../../../data/products";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; 
 import { motion } from "framer-motion";
-import { ShoppingCart, MessageCircle } from "lucide-react";
+import { PhoneCall , MessageCircle } from "lucide-react";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -56,32 +56,24 @@ const ProductDetails = () => {
 
       {/* Buttons */}
       <div className="flex gap-3 mt-4">
-        {/* Quantity Counter */}
-        <div className="flex items-center border rounded-lg">
-          <button
-            className="px-2 py-1 text-lg bg-gray-200 hover:bg-gray-300 rounded-l-lg"
-            onClick={() => setCount((prev) => Math.max(1, prev - 1))} // Ensure count doesn't go below 1
-          >
-            -
-          </button>
-          <span className="px-3 text-lg font-semibold">{count}</span>
-          <button
-            className="px-2 py-1 text-lg bg-gray-200 hover:bg-gray-300 rounded-r-lg"
-            onClick={() => setCount((prev) => prev + 1)}
-          >
-            +
-          </button>
-        </div>
 
-        <button className="btn btn-primary flex items-center">
-          <ShoppingCart className="w-5 h-5 mr-2" />
-          Buy Now
+      {/* Animated Mobile Icon */}
+ {/* Animated Phone Icon inside the Button */}
+ <button className="btn btn-primary flex items-center">
+          <motion.span
+            animate={{ rotate: [0, 10, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 0.5, repeatDelay: 3 }}
+          >
+            <PhoneCall className="w-5 h-5 mr-2" />
+          </motion.span>
+          Contact for Seller
         </button>
-        <button className="btn btn-outline flex items-center">
-          <MessageCircle className="w-5 h-5 mr-2" />
-          Send Inquiry
-        </button>
-      </div>
+
+      <button className="btn btn-outline flex items-center">
+        <MessageCircle className="w-5 h-5 mr-2" />
+        Send Inquiry
+      </button>
+      </div> 
 
       {/* Product Details Table */}
       <div className="overflow-x-auto mt-6">
