@@ -2,8 +2,8 @@
 import Head from 'next/head';
 
 import { usePathname } from "next/navigation";
-import Header from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Header from '../components/Navbar';
+import Footer from '../components/Footer';
 
 import "./styles/globals.css";
 import { Poppins } from "next/font/google";
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en" className={poppins.className}>
-      <body>
+      <body className='min-h-screen bg-gray-100'>
       {showHeaderFooter && <Header />}
       {children}
       {showHeaderFooter && <Footer />}
