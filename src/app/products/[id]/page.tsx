@@ -117,7 +117,8 @@ const ProductDetails = () => {
         <p className="text-gray-500">Location: Surat, Gujarat</p>
       </div>
       {/* Contact Modal */}
-      {isModalOpen && <ContactModal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <ContactModal productName="Your Product" onClose={() => setIsModalOpen(false)} />}
+
 
 
       {/* Inquiry Modal */}
