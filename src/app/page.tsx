@@ -9,10 +9,10 @@ import { ChevronRight, ChevronLeft, Mic, ArrowRight } from "lucide-react";
 // import CategorySlider from "@/components/CategorySlider";
 // import ProductCard from "@/components/ProductCard";
 // import ResponsiveSlider from "@/components/Slider";
-import CategorySlider from "../components/CategorySlider";
-import ProductCard from "../components/ProductCard";
-import ResponsiveSlider from "../components/Slider";
-import Header from "../components/Navbar";
+import CategorySlider from "./components/CategorySlider";
+import ProductCard from "./components/ProductCard";
+import ResponsiveSlider from "./components/Slider";
+import Header from "./components/Navbar";
 import Link from "next/link";
 import {
   User,

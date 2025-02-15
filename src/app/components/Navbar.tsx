@@ -11,11 +11,26 @@ import {
   ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import SearchBar from "./SearchBar";
+import { useCity } from "../context/CityContext";
 
 export default function Header() {
+  const { selectedCity, setSelectedCity } = useCity();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
   const isTradePage = pathname === "/BusinessProducts"; // Store condition in a variable
   const [locationOpen, setLocationOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const router = useRouter();
+
+  const handleSearch = () => {
+    if (searchTerm) {
+      router.push(`/products?search=${searchTerm}`);
+    } else {
+      router.push("/products");
+    }
+  };
 
   return (
     <header className="bg-background w-full text-light fixed shadow-md z-50">
@@ -29,15 +44,15 @@ export default function Header() {
     
           <div className="relative">
             <button
-              onClick={() => setLocationOpen(!locationOpen)}
+              onClick={() => setDropdownOpen(!dropdownOpen)}
               className="flex items-center space-x-1 text-gray-600 "
             >
               <MapPin className="w-5 h-5" />
-              <span>All Cities</span>
+              {selectedCity}
               <ChevronDown className="w-4 h-4" />
             </button>
 
-            {locationOpen && (
+            {dropdownOpen && (
               <div className="absolute left-0 mt-2 w-48 bg-white border shadow-lg p-2 rounded-md">
                 <input
                   type="text"
@@ -45,43 +60,21 @@ export default function Header() {
                   className="w-full p-2 border rounded-md text-sm"
                 />
                 <ul className="mt-2 text-sm">
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer">
-                    Delhi
-                  </li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer">
-                    Mumbai
-                  </li>
-                  <li className="p-2 hover:bg-gray-100 cursor-pointer">
-                    Bengaluru
-                  </li>
+                        {["All Cities", "Delhi", "Mumbai", "Bengaluru"].map((city) => (
+                    <li key={city} onClick={() => { setSelectedCity(city); setDropdownOpen(false); }}>
+                      {city}
+                    </li>
+                  ))}
                 </ul>
               </div>
             )}
           </div>
 
         {/* Search Bar */}
-        <div className="flex items-center border rounded-full px-4 py-2 w-1/2">
-         
-            <select className="text-sm text-light bg-dark focus:outline-none">
-              <option>Products</option>
-              <option>Company</option>
-            </select>
-         
-          <input
-            type="text"
-            placeholder="tactical vest"
-            className="flex-grow px-2 text-sm focus:outline-none text-light bg-dark"
-          />
-          <button className="ml-2  rounded-md">
-            <Search className="" size={20} />
-          </button>
-        </div>
+          <SearchBar/>
 
         {/* Icons and Buttons */}
         <div className="flex items-center space-x-4">
-              <Link href="/cart">
-                <ShoppingCart size={20} className="" />
-              </Link>
       
           {/* Sign Up Button */}
           <button className="font-semibold flex  rounded-xl p-1">

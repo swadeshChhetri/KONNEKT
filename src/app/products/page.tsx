@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Link from "next/link";
-import { products } from "../../data/products";
+import { products } from "../data/products";
 
 // Define TypeScript interface for a product
 const Products = () => {

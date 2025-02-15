@@ -1,17 +1,19 @@
 "use client";
 import { useParams } from "next/navigation";
 // import { products } from "../../data/products"; // Import product data
-import {products} from "../../../data/products";
+import {products} from "../../data/products";
 import { useState } from "react";
 import { useRouter } from "next/navigation"; 
 import { motion } from "framer-motion";
 import { PhoneCall , MessageCircle } from "lucide-react";
-import ContactModal from "../../../components/ContactModal";
+import ContactModal from "../../components/ContactModal";
+import InquiryModal from "../../components/InquiryModal";
 
 const ProductDetails = () => {
   const params = useParams();
   // const [selectedImage, setSelectedImage] = useState("/B2B/1.jpg");
   const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
   const [count, setCount] = useState(1); // Initial count value
   const router = useRouter(); // Initialize the router
 
@@ -71,8 +73,14 @@ const ProductDetails = () => {
             Contact for Seller
           </button>
 
-          <button className="btn btn-outline flex items-center">
-            <MessageCircle className="w-5 h-5 mr-2" />
+          {/* Send Inquiry Button with Interactive Animation */}
+          <button className="btn btn-outline flex items-center" onClick={() => setIsInquiryModalOpen(true)}>
+            <motion.span
+              whileHover={{ scale: 1.2 }}
+              animate={{ rotate: [0, 2, -2, 0], transition: { repeat: Infinity, duration: 1.5, ease: "easeInOut" } }}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+            </motion.span>
             Send Inquiry
           </button>
       </div>
@@ -109,7 +117,11 @@ const ProductDetails = () => {
       <p className="text-gray-500">Location: Surat, Gujarat</p>
     </div>
      {/* Contact Modal */}
-     {isModalOpen && <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />}
+     {isModalOpen && <ContactModal onClose={() => setIsModalOpen(false)} />}
+
+
+      {/* Inquiry Modal */}
+      {isInquiryModalOpen && <InquiryModal onClose={() => setIsInquiryModalOpen(false)} />}
   </div>
   );
 };
