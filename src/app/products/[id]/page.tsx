@@ -1,11 +1,11 @@
 "use client";
 import { useParams } from "next/navigation";
 // import { products } from "../../data/products"; // Import product data
-import {products} from "../../data/products";
+import { products } from "../../data/products";
 import { useState } from "react";
-import { useRouter } from "next/navigation"; 
+import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
-import { PhoneCall , MessageCircle } from "lucide-react";
+import { PhoneCall, MessageCircle } from "lucide-react";
 import ContactModal from "../../components/ContactModal";
 import InquiryModal from "../../components/InquiryModal";
 
@@ -32,15 +32,15 @@ const ProductDetails = () => {
 
   return (
     <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-6 pt-24">
-    {/* Left Section: Product Images */}
-    <div className="sticky top-4 space-y-6">
-      <img
-        src={product.image}
-        alt="Product Image"
-        className="w-full h-96 object-cover rounded-lg shadow"
-      />
-      <div className="flex gap-2">
-        {/* {images.map((img, index) => (
+      {/* Left Section: Product Images */}
+      <div className="sticky top-4 space-y-6">
+        <img
+          src={product.image}
+          alt="Product Image"
+          className="w-full h-96 object-cover rounded-lg shadow"
+        />
+        <div className="flex gap-2">
+          {/* {images.map((img, index) => (
           <img
             key={index}
             src={img}
@@ -48,21 +48,21 @@ const ProductDetails = () => {
             onClick={() => setSelectedImage(img)}
           />
         ))} */}
+        </div>
       </div>
-    </div>
 
-    {/* Middle Section: Product Details */}
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold">
-        Semi-Automatic Stack Chimney Emission System
-      </h1>
-      <p className="text-lg font-semibold text-gray-600">₹33,040.00 INR</p>
+      {/* Middle Section: Product Details */}
+      <div className="space-y-6">
+        <h1 className="text-2xl font-bold">
+          Semi-Automatic Stack Chimney Emission System
+        </h1>
+        <p className="text-lg font-semibold text-gray-600">₹33,040.00 INR</p>
 
-      {/* Buttons */}
-      <div className="flex gap-3 mt-4">
+        {/* Buttons */}
+        <div className="flex gap-3 mt-4">
           {/* Animated Mobile Icon */}
           {/* Animated Phone Icon inside the Button */}
-          <button className="btn btn-primary flex items-center" 
+          <button className="btn btn-primary flex items-center"
             onClick={() => setIsModalOpen(true)}>
             <motion.span
               animate={{ rotate: [0, 10, -10, 0] }}
@@ -83,46 +83,52 @@ const ProductDetails = () => {
             </motion.span>
             Send Inquiry
           </button>
+        </div>
+
+        {/* Product Details Table */}
+        <div className="overflow-x-auto mt-6">
+          <table className="table w-full border">
+            <tbody>
+              <tr>
+                <td className="font-semibold">Material</td>
+                <td>Ozone Generator</td>
+              </tr>
+              <tr>
+                <td className="font-semibold">Automatic Grade</td>
+                <td>Semi-Automatic</td>
+              </tr>
+              <tr>
+                <td className="font-semibold">Voltage</td>
+                <td>220-440V</td>
+              </tr>
+              <tr>
+                <td className="font-semibold">Warranty</td>
+                <td>1 Year</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      {/* Product Details Table */}
-      <div className="overflow-x-auto mt-6">
-        <table className="table w-full border">
-          <tbody>
-            <tr>
-              <td className="font-semibold">Material</td>
-              <td>Ozone Generator</td>
-            </tr>
-            <tr>
-              <td className="font-semibold">Automatic Grade</td>
-              <td>Semi-Automatic</td>
-            </tr>
-            <tr>
-              <td className="font-semibold">Voltage</td>
-              <td>220-440V</td>
-            </tr>
-            <tr>
-              <td className="font-semibold">Warranty</td>
-              <td>1 Year</td>
-            </tr>
-          </tbody>
-        </table>
+      {/* Right Section: Seller Details */}
+      <div className="space-y-4 p-4 border rounded-lg shadow">
+        <h2 className="text-xl font-semibold">Seller Details</h2>
+        <p className="text-gray-600">Aeolus Sustainable Bioenergy Pvt. Ltd.</p>
+        <p className="text-gray-500">Location: Surat, Gujarat</p>
       </div>
-    </div>
-
-    {/* Right Section: Seller Details */}
-    <div className="space-y-4 p-4 border rounded-lg shadow">
-      <h2 className="text-xl font-semibold">Seller Details</h2>
-      <p className="text-gray-600">Aeolus Sustainable Bioenergy Pvt. Ltd.</p>
-      <p className="text-gray-500">Location: Surat, Gujarat</p>
-    </div>
-     {/* Contact Modal */}
-     {isModalOpen && <ContactModal onClose={() => setIsModalOpen(false)} />}
+      {/* Contact Modal */}
+      {isModalOpen && <ContactModal onClose={() => setIsModalOpen(false)} />}
 
 
       {/* Inquiry Modal */}
-      {isInquiryModalOpen && <InquiryModal onClose={() => setIsInquiryModalOpen(false)} />}
-  </div>
+      {isInquiryModalOpen && (
+        <InquiryModal
+          productName={product.name}
+          mobileNumber="8597079194"
+          onClose={() => setIsInquiryModalOpen(false)}
+        />
+      )}
+    </div>
   );
 };
 

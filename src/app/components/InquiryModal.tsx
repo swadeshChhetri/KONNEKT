@@ -4,7 +4,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { X, ArrowRight, CheckCircle } from 'lucide-react';
 
-export default function InquiryFormModal({ productName = 'Unknown Product', onClose }) {
+interface InquiryModalProps {
+  productName?: string;
+  mobileNumber?: string;
+  onClose: () => void;
+}
+
+export default function InquiryFormModal({ productName = 'Unknown Product', mobileNumber, onClose }: InquiryModalProps) {
   const [step, setStep] = useState(1);
   const [requirement, setRequirement] = useState('one-time');
   const [sendToOthers, setSendToOthers] = useState(false);
