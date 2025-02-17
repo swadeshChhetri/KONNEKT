@@ -1,5 +1,5 @@
-"use client"
-import { Suspense } from "react";
+"use client"; // Ensures this is a client-side component
+
 import { useSearchParams } from "next/navigation";
 import ProductListPage from "./ProductListPage";
 
@@ -7,13 +7,8 @@ export default function SearchPage() {
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("search") || ""; // Retrieve search query directly from URL
 
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <ProductListPage searchQuery={searchQuery} />
-    </Suspense>
-
-  );
-
+  return <ProductListPage searchQuery={searchQuery} />;
 }
+
 
    
