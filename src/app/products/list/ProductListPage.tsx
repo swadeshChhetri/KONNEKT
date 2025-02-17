@@ -5,14 +5,17 @@ import { useEffect, useState } from "react";
 import { products } from "../../data/products";
 import Link from "next/link";
 import { useCity } from "../../context/CityContext";
+import Image from "next/image";
 
 export default function ProductListPage() {
   const { selectedCity } = useCity();
   const searchParams = useSearchParams();
   const searchQuery = searchParams.get("search") || "";
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     let filtered = products;
 
     // Apply city filter (if city is not "All Cities")
@@ -20,17 +23,24 @@ export default function ProductListPage() {
       filtered = filtered.filter((product) => product.city === selectedCity);
     }
 
-    // Apply search filter (category)
+    // Apply search filter (category) if searchQuery is not empty
     if (searchQuery.trim()) {
       filtered = filtered.filter((product) =>
         product.category.toLowerCase().includes(searchQuery.toLowerCase())
       );
-    } else {
-      filtered = [];
     }
 
     setFilteredProducts(filtered);
+    setIsLoading(false);
   }, [searchQuery, selectedCity]);
+
+  if (isLoading) {
+    return <p>Loading products...</p>;
+  }
+
+  if (!products || products.length === 0) {
+    return <p>No products available.</p>;
+  }
 
   return (
     <div className="pt-24 px-4">
@@ -40,9 +50,11 @@ export default function ProductListPage() {
           filteredProducts.map((product) => (
             <div key={product.id} className="border p-4 rounded shadow-sm bg-white">
               <Link href={`/products/${product.id}`}>
-                <img
+                <Image
                   src={product.image}
                   alt={product.name}
+                  width={200}
+                  height={200}
                   className="w-full h-32 object-cover mb-2"
                 />
               </Link>
@@ -51,10 +63,16 @@ export default function ProductListPage() {
 
               {/* Buttons */}
               <div className="mt-3 flex gap-2 w-full">
-                <button className="flex-1 bg-gray-200 text-gray-800 px-3 py-2 text-sm rounded-md">
+                <button
+                  className="flex-1 bg-gray-200 text-gray-800 px-3 py-2 text-sm rounded-md"
+                  aria-label="View contact number"
+                >
                   View Number
                 </button>
-                <button className="flex-1 bg-blue-600 text-white px-3 py-2 text-sm rounded-md">
+                <button
+                  className="flex-1 bg-blue-600 text-white px-3 py-2 text-sm rounded-md"
+                  aria-label="Contact supplier"
+                >
                   Contact Supplier
                 </button>
               </div>
