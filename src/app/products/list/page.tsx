@@ -1,5 +1,4 @@
-"use client"; // Ensures this is a client-side component
-
+"use client";
 import { useSearchParams } from "next/navigation";
 import ProductListPage from "./ProductListPage";
 
@@ -11,4 +10,3 @@ export default function SearchPage() {
 }
 
 
-   
