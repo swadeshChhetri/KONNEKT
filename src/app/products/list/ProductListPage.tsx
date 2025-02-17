@@ -1,18 +1,15 @@
 "use client";
 
-// import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { products } from "../../data/products";
 import Link from "next/link";
 import { useCity } from "../../context/CityContext";
 
-// ✅ Define props interface
-interface ProductListPageProps {
-  searchQuery: string;
-}
-
-export default function ProductListPage({ searchQuery }: ProductListPageProps) {
+export default function ProductListPage() {
   const { selectedCity } = useCity();
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("search") || "";
   const [filteredProducts, setFilteredProducts] = useState([]);
 
   useEffect(() => {
