@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { PhoneCall, MessageCircle } from "lucide-react";
 import ContactModal from "../../components/ContactModal";
-import InquiryModal from "../../components/InquiryModal";
+// import InquiryModal from "../../components/InquiryModal";
+import InquiryFormModal from "../../components/InquiryModal";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -123,7 +124,7 @@ const ProductDetails = () => {
 
       {/* Inquiry Modal */}
       {isInquiryModalOpen && (
-        <InquiryModal
+        <InquiryFormModal
           productName={product.name}
           mobileNumber="8597079194"
           onClose={() => setIsInquiryModalOpen(false)}
